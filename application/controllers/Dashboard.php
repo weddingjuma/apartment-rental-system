@@ -10,6 +10,6 @@ class Dashboard extends MY_Controller
 
     public function index()
     {
-        
+        print_r($this->session->get_userdata('user'));
     }
 }

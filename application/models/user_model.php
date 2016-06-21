@@ -13,13 +13,20 @@ class User_model extends CI_Model
 
     private function encodePassword($password)
     {
-        
+
     }
 
     public function loginByName($id)
     {
-        $query = $this->db->get('users')->limit(1);
+        $query = $this->db->where('username', $this->input->post('username'))
+                    ->where('password', md5($this->input->post('password')))
+                    ->where('is_active', 1)
+                    ->limit(1)->get('users');
 
-        print_r($query->row());
+        if ($query->num_rows()) {
+            return $query->row();
+        } else {
+            return false;
+        }
     }
 }
