@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Auth extends MY_Controller
+class Auth extends My_Controller
 {
     public function __construct()
     {
@@ -18,7 +18,6 @@ class Auth extends MY_Controller
 
     public function postLogin()
     {
-        print_r($this->input->post());
-        exit;
+        return $this->user_model->loginByName($this->input->post('username'), $this->input->post('password'));
     }
 }

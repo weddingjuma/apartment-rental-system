@@ -3,13 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_model extends CI_Model
 {
+    public $username;
+    public $password;
+
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function getUsers($id)
+    private function encodePassword($password)
     {
-        $this->db->get('users');
+        
+    }
+
+    public function loginByName($id)
+    {
+        $query = $this->db->get('users')->limit(1);
+
+        print_r($query->row());
     }
 }
