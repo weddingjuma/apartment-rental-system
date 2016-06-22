@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url('dashboard/index'); ?>">CI-Starter</a>
+            <a class="navbar-brand" href="<?php echo base_url('dashboard'); ?>">CI-Starter</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -20,7 +20,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li>
-                        <a href="<?php echo base_url('user/view/' . $this->session->userdata('user_id')); ?>">
+                        <a href="<?php echo base_url('user/' . $this->session->userdata('user_id')); ?>">
                             <i class="fa fa-user fa-fw"></i> ข้อมูลส่วนตัว
                         </a>
                     </li>
@@ -31,7 +31,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="<?php echo base_url('user/logout'); ?>">
+                        <a href="<?php echo base_url('logout'); ?>">
                             <i class="fa fa-sign-out fa-fw"></i> ออกจากระบบ
                         </a>
                     </li>
