@@ -18,7 +18,7 @@ class Auth extends My_Controller
 
     public function postLogin()
     {
-        $user = $this->user_model->loginByName($this->input->post('username'), $this->input->post('password'));
+        $user = $this->user_model->login($this->input->post());
 
         // Cretae user session
         $data = [
