@@ -10,8 +10,8 @@ class Dashboard extends MY_Controller
 
     public function index()
     {
-        // $this->data['title'] = 'xxxxx';
-        //
+        $this->data['title'] = 'CI-Starter';
+
         $this->content = 'dashboard';
         $this->layout();
     }
