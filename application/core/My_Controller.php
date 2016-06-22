@@ -11,7 +11,7 @@ class My_Controller extends CI_Controller
         parent::__construct();
 
         // Authentication
-        if (!$this->session->has_userdata('user') && (strtolower($this->router->class) != 'auth')) {
+        if (!$this->session->has_userdata('logged_in') && (strtolower($this->router->class) != 'auth')) {
             redirect(base_url('login'));
         }
     }

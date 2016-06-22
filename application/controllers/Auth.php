@@ -22,15 +22,23 @@ class Auth extends My_Controller
 
         // Cretae user session
         $data = [
-            'id' => $user->id,
+            'user_id' => $user->id,
             'username' => $user->username,
             'email' => $user->email,
             'type' => $user->type,
             'is_active' => $user->is_active,
+            'logged_in' => true,
         ];
 
-        $this->session->set_userdata('user', $data);
+        $this->session->set_userdata($data);
 
         redirect('dashboard');
+    }
+
+    public function logout()
+    {
+        $data = ['user_id','username','email','type','is_active','logged_in',];
+        $this->session->unset_userdata($data);
+        redirect('login');
     }
 }
