@@ -13,12 +13,12 @@ class Auth extends My_Controller
         $this->data['title'] = 'login';
 
         $this->content = 'auth/login';
-        $this->layout();
+        $this->layout('full-width-no-header');
     }
 
     public function postLogin()
     {
-        $user = $this->user_model->login($this->input->post());
+        $user = $this->user_model->loginByName($this->input->post('username'), $this->input->post('password'));
 
         // Cretae user session
         $data = [

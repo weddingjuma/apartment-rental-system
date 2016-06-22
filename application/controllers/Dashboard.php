@@ -10,7 +10,9 @@ class Dashboard extends MY_Controller
 
     public function index()
     {
-        print_r($this->session->get_userdata('username'));
-        echo 'Hi, ' . $this->session->userdata('username');
+        // $this->data['title'] = 'xxxxx';
+        //
+        $this->content = 'dashboard';
+        $this->layout();
     }
 }

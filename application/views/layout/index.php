@@ -9,24 +9,24 @@
 	<title><?php echo $title;?></title>
 	<?php
 
-    // $styles = [
-    // 	'bootstrap'    => ['href' => base_url('assets/css/bootstrap.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
-    // 	'metisMenu'    => ['href' => base_url('assets/css/metisMenu.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
-    // 	'sb-admin-2'   => ['href' => base_url('assets/css/sb-admin-2.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
-    // 	'morris'       => ['href' => base_url('assets/css/morris.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
-    // 	'dataTables'   => ['href' => base_url('assets/css/dataTables.bootstrap.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
-    // 	'font-awesome' => ['href' => base_url('assets/css/font-awesome.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
-    // 	'dashboard'    => ['href' => base_url('assets/css/dashboard.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
-    // 	'jquery-ui'    => ['href' => base_url('assets/js/jquery-ui-1.10.2.custom/css/redmond/jquery-ui-1.10.2.custom.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
-    // ];
-    //
-    // foreach ($styles as $style) {
-    // 	echo link_tag($style);
-    // }
+    $styles = [
+    	'bootstrap'    => ['href' => base_url('assets/css/bootstrap.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
+    	'metisMenu'    => ['href' => base_url('assets/css/metisMenu.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
+    	'sb-admin-2'   => ['href' => base_url('assets/css/sb-admin-2.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
+    	'morris'       => ['href' => base_url('assets/css/morris.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
+    	'dataTables'   => ['href' => base_url('assets/css/dataTables.bootstrap.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
+    	'font-awesome' => ['href' => base_url('assets/css/font-awesome.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
+    	'dashboard'    => ['href' => base_url('assets/css/dashboard.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
+    	'jquery-ui'    => ['href' => base_url('assets/js/jquery-ui-1.10.2.custom/css/redmond/jquery-ui-1.10.2.custom.min.css'), 'rel' => 'stylesheet', 'type' => 'text/css'],
+    ];
+
+    foreach ($styles as $style) {
+    	echo link_tag($style);
+    }
 
     // Favicon
-    // $favicon = ['href' => base_url('assets/images/icons/favicon.ico'), 'rel' => 'shortcut icon'];
-    // echo link_tag($favicon);
+    $favicon = ['href' => base_url('assets/images/icons/favicon.ico'), 'rel' => 'shortcut icon'];
+    echo link_tag($favicon);
 
     ?>
 
@@ -39,21 +39,10 @@
 </head>
 <body>
 	<?php
-        if (isset($header)) {
-            echo $header;
-        }
-
-        if (isset($left)) {
-            echo $left;
-        }
-
-        if (isset($middle)) {
-            echo $middle;
-        }
-
-        if (isset($footer)) {
-            echo $footer;
-        }
+        if (isset($header)) echo $header;
+        if (isset($left)) echo $left;
+        if (isset($middle)) echo $middle;
+        if (isset($footer)) echo $footer;
     ?>
 </body>
 </html>

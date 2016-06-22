@@ -16,15 +16,25 @@ class User_model extends CI_Model
         return md5($password);
     }
 
-    public function login($username,$password)
+    public function loginByName($username, $password)
     {
-        // Bug input post
         if ($this->input->post('username')) {
             $query = $this->db->where('username', $this->input->post('username'))
                         ->where('password', $this->encodePassword($this->input->post('password')))
                         ->where('is_active', 1)
                         ->limit(1)->get('users');
-        } elseif($this->input->post('email')){
+        }
+
+        if ($query->num_rows()) {
+            return $query->row();
+        } else {
+            return false;
+        }
+    }
+
+    public function loginByEmail($username, $password)
+    {
+        if ($this->input->post('email')) {
             $query = $this->db->where('email', $this->input->post('email'))
                         ->where('password', $this->encodePassword($this->input->post('password')))
                         ->where('is_active', 1)
@@ -32,8 +42,6 @@ class User_model extends CI_Model
         }
 
         if ($query->num_rows()) {
-            print_r($query->row());
-            exit;
             return $query->row();
         } else {
             return false;
